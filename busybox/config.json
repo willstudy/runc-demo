@@ -43,6 +43,11 @@
 	"hostname": "runc",
 	"mounts": [
 		{
+			"destination": "/proc",
+			"type": "proc",
+			"source": "proc"
+		},
+		{
 			"destination": "/dev",
 			"type": "tmpfs",
 			"source": "tmpfs",
@@ -96,18 +101,6 @@
 				"nosuid",
 				"noexec",
 				"nodev",
-				"ro"
-			]
-		},
-		{
-			"destination": "/sys/fs/cgroup",
-			"type": "cgroup",
-			"source": "cgroup",
-			"options": [
-				"nosuid",
-				"noexec",
-				"nodev",
-				"relatime",
 				"ro"
 			]
 		}
