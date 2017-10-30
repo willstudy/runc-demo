@@ -43,11 +43,6 @@
 	"hostname": "runc",
 	"mounts": [
 		{
-			"destination": "/proc",
-			"type": "proc",
-			"source": "proc"
-		},
-		{
 			"destination": "/dev",
 			"type": "tmpfs",
 			"source": "tmpfs",

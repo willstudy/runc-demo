@@ -27,7 +27,26 @@ Now, we add `CAP_SYS_ADMIN` capability for this container by modifying `config.j
 ```
 After that, running this container again, we can set hostname in this container.
 # mount demo
-we can mount some devices for the new container by modifying `mounts` field of the `config.json`.
+we can mount some devices for the new container by modifying `mounts` field of the `config.json`. For example, we mount `proc` mount point and run this container, we can see a new process view.
+```
+   "mounts": [
++	{
++		"destination": "/proc",
++		"type": "proc",
++		"source": "proc"
++	},
+	{
+		"destination": "/dev",
+		"type": "tmpfs",
+		"source": "tmpfs",
+		"options": [
+			"nosuid",
+			"strictatime",
+			"mode=755",
+			"size=65536k"
+		]
+	},
+```
 # namespace demo
 we can add this container into the existing namespaces by `namespaces` field of the `config.json`. For example 
 ```
